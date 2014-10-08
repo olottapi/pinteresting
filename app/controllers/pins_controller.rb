@@ -1,46 +1,46 @@
 class PinsController < ApplicationController
   respond_to :html
-  before_action :set_pins, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pins = Pins.all
+    @pins = Pin.all
     respond_with(@pins)
   end
 
   def show
-    respond_with(@pins)
+    respond_with(@pin)
   end
 
   def new
-    @pins = Pins.new
-    respond_with(@pins)
+    @pin = Pin.new
+    respond_with(@pin)
   end
 
   def edit
   end
 
   def create
-    @pins = Pins.new(pins_params)
+    @pin = Pin.new(pin_params)
     @pin.save
-    respond_with(@pins)
+    respond_with(@pin)
   end
 
   def update
-    @pin.update(pins_params)
-    respond_with(@pins)
+    @pin.update(pin_params)
+    respond_with(@pin)
   end
 
   def destroy
     @pin.destroy
-    respond_with(@pins)
+    respond_with(@pin)
   end
 
   private
-    def set_pins
-      @pins = Pins.find(params[:id])
+    def set_pin
+      @pin = Pin.find(params[:id])
     end
 
-    def pins_params
-      params.require(:pins).permit(:description)
+    def pin_params
+      params.require(:pin).permit(:description)
     end
 end
