@@ -15,6 +15,8 @@ gem 'devise', '~> 3.4.0'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.55'
 gem 'masonry-rails', '~> 0.2.1'
+gem 'will_paginate', '~> 3.0.3'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 group :development, :test do
 gem 'sqlite3'
