@@ -1,13 +1,20 @@
-<div id="bg">
+<div class="bg">
 	<img src="assets/IMG_2488.JPG" id="bg" alt="">
-</div>
 
-<div class="jumbotron center">
-	<h1>Share your adventures. Find new friends. Just roam together.</h1>
+		<div class="container col-md-12">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+						<div id="cover" class="jumbotron center">
+				<h1>Share the Adventure<p> just roam together</h1>
+		
+				<p>
+		 		<%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
+		 		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+				</p>
+				</div>	
+			
+		</div>
 	
-	<p>
-	 <%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
-	 <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-	</p>
-
 </div>
