@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   #root "pins#index"
+  authenticated :user do 
+    devise_scope :user do 
+      root :to => "pins#index", :as => "user_root"
+    end  
+  end
+
   root "pages#_home"
   get "adventures" => "pins#index"
   get "about" => "pages#about" #creates about_path
