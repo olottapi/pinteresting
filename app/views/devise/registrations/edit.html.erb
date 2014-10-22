@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h2>My Profile</h2>
     </div>
 
     <div class="panel-body">
@@ -8,7 +8,7 @@
     <%= devise_error_messages! %>
 
           <%= image_tag resource.image.url(), width: 100 %>
-
+          <p></p>
           <div class="form-group">
             <div><%= f.label :image %><br />
             <%= f.file_field :image, autofocus: true, class: "form-control" %></div>

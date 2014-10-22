@@ -1,4 +1,5 @@
 <%= render 'pages/home' unless user_signed_in? %>
+<% @users = User.paginate(:page => params[:page], :per_page => 12) %>
 
 <div class="row">
   <div id="users" class="col-xs-12 transitions-enabled">
@@ -6,9 +7,14 @@
         <div class="box panel panel-default">
             <%= link_to image_tag(user.image.url(:medium).to_s), user %>
             </a>
+      
             <div class="panel-body">
               <p><strong><%= user.name%></strong></p>
             </div>
         </div>
   <% end %>
   </div>
+
+<div class="row text-center">
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</div>
