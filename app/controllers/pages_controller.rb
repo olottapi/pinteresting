@@ -4,5 +4,9 @@ class PagesController < ApplicationController
 
   def about	
   end
+  def friends
+  	 @users = User.all 
+  end
+
 end
 
