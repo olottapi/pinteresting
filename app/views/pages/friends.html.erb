@@ -1,0 +1,15 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
+<div class="row">
+  <div id="users" class="col-xs-12 transitions-enabled">
+      <% @users = User.all %>
+      <% @users.each do |user| %>
+        <div class="box panel panel-default">
+            <%= link_to image_tag(user.image.url(:medium).to_s), user %>
+            </a>
+          <div class="panel-body">
+            <p><strong><%= user.email %></strong></p>
+          </div>
+        </div>
+  <% end %>
+  </div>

@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     end  
   end
 
+  resources :users, :only => [:show]
+
   root "pages#_home"
   get "adventures" => "pins#index"
+  get "friends" => "pages#friends"
   get "about" => "pages#about" #creates about_path
   get "contactus" => "pages#contactus"
 
